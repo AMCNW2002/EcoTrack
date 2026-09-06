@@ -1,0 +1,263 @@
+/* Dashboard Specific CSS */
+
+/* --- Layout --- */
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-light-gray);
+}
+
+.sidebar {
+    width: 260px;
+    background-color: white;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.topbar {
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 900;
+}
+
+.dashboard-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+/* --- Sidebar Items --- */
+.sidebar-logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu-item {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.sidebar-menu-link:hover {
+    background-color: var(--bg-light-gray);
+    color: var(--text-dark);
+}
+
+.sidebar-menu-link.active {
+    background-color: var(--light-green);
+    color: var(--primary-green);
+}
+
+.sidebar-menu-link i {
+    width: 24px;
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    text-align: center;
+}
+
+.sidebar-menu-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    font-weight: 600;
+    margin: 1.5rem 1rem 0.5rem;
+}
+
+/* --- Topbar --- */
+.topbar-search {
+    background-color: var(--bg-light-gray);
+    border-radius: 2rem;
+    padding: 0.25rem 1rem;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.topbar-search input {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.topbar-search input:focus {
+    outline: none;
+}
+
+.notification-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light-gray);
+    color: var(--text-dark);
+    transition: var(--transition);
+    border: none;
+}
+
+.notification-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+}
+
+.profile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* --- Dashboard Widgets --- */
+.dash-card {
+    background-color: white;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.dash-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.stat-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: var(--text-dark);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.badge-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-completed { background-color: var(--light-green); color: var(--dark-green); }
+.badge-pending { background-color: var(--light-orange); color: var(--primary-orange); }
+.badge-progress { background-color: var(--light-blue); color: var(--primary-blue); }
+
+/* --- Mobile Responsiveness --- */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -260px;
+    }
+    
+    .sidebar.show {
+        left: 0;
+    }
+    
+    .sidebar-overlay.show {
+        display: block;
+    }
+    
+    .topbar-search {
+        display: none !important;
+    }
+}

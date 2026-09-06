@@ -1,0 +1,237 @@
+/* Citizen specific CSS */
+
+/* --- Waste Type Selection --- */
+.waste-type-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    text-align: center;
+    background-color: white;
+}
+
+.waste-type-card:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.waste-type-card.selected {
+    border-color: var(--primary-green);
+    background-color: var(--light-green);
+}
+
+.waste-type-card.selected .check-icon {
+    display: flex;
+}
+
+.check-icon {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.waste-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.waste-type-card.selected .waste-icon {
+    color: var(--primary-green);
+}
+
+/* --- File Upload Area --- */
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--bg-light-gray);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.upload-area:hover, .upload-area.dragover {
+    border-color: var(--primary-green);
+    background-color: rgba(22, 163, 74, 0.05);
+}
+
+.image-preview-container {
+    display: none;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    max-width: 300px;
+}
+
+.image-preview-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.remove-image-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-red);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Priority Selection --- */
+.priority-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: white;
+    height: 100%;
+}
+
+.priority-card:hover {
+    border-color: #cbd5e1;
+}
+
+.priority-card.priority-low.selected {
+    border-color: var(--primary-green);
+    background-color: var(--light-green);
+}
+.priority-card.priority-normal.selected {
+    border-color: var(--primary-orange);
+    background-color: var(--light-orange);
+}
+.priority-card.priority-high.selected {
+    border-color: var(--primary-red);
+    background-color: var(--light-red);
+}
+
+/* --- Map Placeholder --- */
+.map-placeholder {
+    height: 200px;
+    background-color: #e2e8f0;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23cbd5e1" d="M0,0 L100,100 M100,0 L0,100" stroke="%23cbd5e1" stroke-width="1"/></svg>');
+    background-size: 50px 50px;
+}
+
+/* --- Timeline --- */
+.status-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    width: 2px;
+    background-color: #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -2rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #cbd5e1;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+
+.timeline-item.completed .timeline-icon {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+.timeline-item.current .timeline-icon {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    border-width: 4px;
+}
+
+.timeline-item.completed::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: -2rem;
+    transform: translateX(8px);
+    width: 2px;
+    height: calc(100% + 2rem - 18px);
+    background-color: var(--primary-green);
+    z-index: 1;
+}
+
+/* Status Badges Ext */
+.badge-assigned { background-color: var(--light-blue); color: var(--primary-blue); }
+.badge-resolved { background-color: #dcfce7; color: #166534; }
+.badge-cancelled { background-color: var(--light-red); color: var(--primary-red); }
+
+/* --- Toast --- */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1055;
+}
+
+/* --- Modal tweaks --- */
+.success-modal-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto;
+}

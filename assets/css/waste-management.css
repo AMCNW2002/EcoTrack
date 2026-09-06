@@ -1,0 +1,149 @@
+/* waste-management.css */
+
+/* Category Cards */
+.category-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+.category-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Recycling Flow Process */
+.recycling-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 2rem 0;
+}
+.flow-step {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+.flow-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #28a745;
+    color: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+.flow-step:hover .flow-icon {
+    background: #28a745;
+    color: #fff;
+    transform: scale(1.1);
+}
+.flow-line {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: #e9ecef;
+    z-index: 1;
+    transform: translateY(-20px);
+}
+.flow-line-fill {
+    height: 100%;
+    background: #28a745;
+    transition: width 1s ease-in-out;
+}
+
+/* Center Capacity Bar */
+.capacity-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+    overflow: hidden;
+}
+.capacity-fill {
+    height: 100%;
+    background: #28a745;
+}
+.capacity-fill.warning {
+    background: #ffc107;
+}
+.capacity-fill.danger {
+    background: #dc3545;
+}
+
+/* Smart Guide Search */
+.smart-search-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.smart-search-input {
+    border-radius: 30px;
+    padding: 15px 30px 15px 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s;
+}
+.smart-search-input:focus {
+    border-color: #28a745;
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.15);
+}
+.smart-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+}
+.search-result-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f8f9fa;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.search-result-item:hover {
+    background: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .recycling-flow {
+        flex-direction: column;
+    }
+    .flow-line {
+        display: none;
+    }
+    .flow-step {
+        margin-bottom: 20px;
+    }
+}
